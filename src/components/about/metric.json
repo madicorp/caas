@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_metrics_metrics",
+  "info": {
+    "displayName": "Metric",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "number": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_project_project_infos",
+  "info": {
+    "displayName": "Project Info",
+    "icon": "information",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "place": {
+      "type": "string"
+    },
+    "client": {
+      "type": "string"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Aménagements Urbains",
+        "Equipements Commerciaux",
+        "Equipements Industriels",
+        "Equipements Scolaires et de Formation Technique",
+        "Logements Individuels",
+        "Immeubles multi-fonctionels",
+        "Aménagements Paysagers et Touristiques",
+        "Equipements Sanitaires",
+        "Equipements Sportifs",
+        "Lieux de culte",
+        "Immeuble de bureaux",
+        "Aménagement intérieur",
+        "Immeubles d’habitation"
+      ]
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_pages",
+  "info": {
+    "singularName": "about-page",
+    "pluralName": "about-pages",
+    "displayName": "About Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "about": {
+      "type": "blocks"
+    },
+    "funfacts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.metric"
+    },
+    "domains": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.domain"
+    },
+    "team": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.team"
+    },
+    "approach": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.approach"
+    }
+  }
+}
