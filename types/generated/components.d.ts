@@ -48,6 +48,17 @@ export interface AboutMetric extends Schema.Component {
   };
 }
 
+export interface AboutPresenting extends Schema.Component {
+  collectionName: 'components_about_presentings';
+  info: {
+    displayName: 'Presenting';
+  };
+  attributes: {
+    mission: Attribute.Text;
+    content: Attribute.Blocks;
+  };
+}
+
 export interface AboutTeam extends Schema.Component {
   collectionName: 'components_about_teams';
   info: {
@@ -179,6 +190,7 @@ declare module '@strapi/types' {
       'about.award': AboutAward;
       'about.domain': AboutDomain;
       'about.metric': AboutMetric;
+      'about.presenting': AboutPresenting;
       'about.team': AboutTeam;
       'project.project-info': ProjectProjectInfo;
       'project.project': ProjectProject;

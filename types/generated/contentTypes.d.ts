@@ -801,11 +801,11 @@ export interface ApiAboutPageAboutPage extends Schema.SingleType {
   };
   attributes: {
     title: Attribute.String;
-    about: Attribute.Blocks;
     funfacts: Attribute.Component<'about.metric', true>;
     domains: Attribute.Component<'about.domain', true>;
     team: Attribute.Component<'about.team', true>;
     approach: Attribute.Component<'about.approach', true>;
+    presenting: Attribute.Component<'about.presenting'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
