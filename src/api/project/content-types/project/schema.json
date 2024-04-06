@@ -12,21 +12,22 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string"
     },
-    "Information": {
+    "information": {
       "type": "component",
       "repeatable": false,
       "component": "project.project-info"
     },
-    "Gallery": {
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "videos"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     }
   }
 }

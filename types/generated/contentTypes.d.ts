@@ -931,9 +931,9 @@ export interface ApiProjectProject extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Name: Attribute.String;
-    Information: Attribute.Component<'project.project-info'>;
-    Gallery: Attribute.Media;
+    name: Attribute.String;
+    information: Attribute.Component<'project.project-info'>;
+    gallery: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
