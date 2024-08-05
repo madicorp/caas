@@ -1,77 +1,79 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface AboutApproach extends Schema.Component {
-  collectionName: 'components_about_approaches';
+export interface SocialSocial extends Schema.Component {
+  collectionName: 'components_social_socials';
   info: {
-    displayName: 'Approach';
+    displayName: 'Social';
   };
   attributes: {
-    name: Attribute.String;
-    description: Attribute.Text;
+    facebook: Attribute.String;
+    instagram: Attribute.String;
+    linkedin: Attribute.String;
+    youtube: Attribute.String;
   };
 }
 
-export interface AboutAward extends Schema.Component {
-  collectionName: 'components_about_awards';
+export interface SharedSeo extends Schema.Component {
+  collectionName: 'components_shared_seos';
   info: {
-    displayName: 'Award';
+    displayName: 'seo';
+    icon: 'search';
   };
   attributes: {
-    name: Attribute.String;
-    description: Attribute.Text;
-    image: Attribute.Media;
+    metaTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    metaDescription: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 50;
+        maxLength: 160;
+      }>;
+    metaImage: Attribute.Media<'images' | 'files' | 'videos'>;
+    metaSocial: Attribute.Component<'shared.meta-social', true>;
+    keywords: Attribute.Text;
+    metaRobots: Attribute.String;
+    structuredData: Attribute.JSON;
+    metaViewport: Attribute.String;
+    canonicalURL: Attribute.String;
   };
 }
 
-export interface AboutDomain extends Schema.Component {
-  collectionName: 'components_about_domains';
+export interface SharedMetaSocial extends Schema.Component {
+  collectionName: 'components_shared_meta_socials';
   info: {
-    displayName: 'Domain';
+    displayName: 'metaSocial';
+    icon: 'project-diagram';
   };
   attributes: {
-    name: Attribute.String;
-    icon: Attribute.Media;
-    description: Attribute.Text;
+    socialNetwork: Attribute.Enumeration<['Facebook', 'Twitter']> &
+      Attribute.Required;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    description: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 65;
+      }>;
+    image: Attribute.Media<'images' | 'files' | 'videos'>;
   };
 }
 
-export interface AboutMetric extends Schema.Component {
-  collectionName: 'components_metrics_metrics';
+export interface ProjectProject extends Schema.Component {
+  collectionName: 'components_project_projects';
   info: {
-    displayName: 'Metric';
+    displayName: 'Project';
     description: '';
   };
   attributes: {
     name: Attribute.String;
-    icon: Attribute.Media;
-    number: Attribute.Integer;
-  };
-}
-
-export interface AboutPresenting extends Schema.Component {
-  collectionName: 'components_about_presentings';
-  info: {
-    displayName: 'Presenting';
-  };
-  attributes: {
-    mission: Attribute.Text;
-    content: Attribute.Blocks;
-  };
-}
-
-export interface AboutTeam extends Schema.Component {
-  collectionName: 'components_about_teams';
-  info: {
-    displayName: 'Team Member';
-    description: '';
-  };
-  attributes: {
-    name: Attribute.String;
-    position: Attribute.String;
-    email: Attribute.Email;
-    phone: Attribute.String;
-    ceo: Attribute.Boolean & Attribute.DefaultTo<false>;
-    photo: Attribute.Media;
+    informations: Attribute.Component<'project.project-info'>;
+    gallery: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
   };
 }
 
@@ -106,97 +108,95 @@ export interface ProjectProjectInfo extends Schema.Component {
   };
 }
 
-export interface ProjectProject extends Schema.Component {
-  collectionName: 'components_project_projects';
+export interface AboutTeam extends Schema.Component {
+  collectionName: 'components_about_teams';
   info: {
-    displayName: 'Project';
+    displayName: 'Team Member';
     description: '';
   };
   attributes: {
     name: Attribute.String;
-    informations: Attribute.Component<'project.project-info'>;
-    gallery: Attribute.Media;
+    position: Attribute.String;
+    email: Attribute.Email;
+    phone: Attribute.String;
+    ceo: Attribute.Boolean & Attribute.DefaultTo<false>;
+    photo: Attribute.Media<'images'>;
   };
 }
 
-export interface SharedMetaSocial extends Schema.Component {
-  collectionName: 'components_shared_meta_socials';
+export interface AboutPresenting extends Schema.Component {
+  collectionName: 'components_about_presentings';
   info: {
-    displayName: 'metaSocial';
-    icon: 'project-diagram';
+    displayName: 'Presenting';
   };
   attributes: {
-    socialNetwork: Attribute.Enumeration<['Facebook', 'Twitter']> &
-      Attribute.Required;
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 60;
-      }>;
-    description: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 65;
-      }>;
-    image: Attribute.Media;
+    mission: Attribute.Text;
+    content: Attribute.Blocks;
   };
 }
 
-export interface SharedSeo extends Schema.Component {
-  collectionName: 'components_shared_seos';
+export interface AboutMetric extends Schema.Component {
+  collectionName: 'components_metrics_metrics';
   info: {
-    displayName: 'seo';
-    icon: 'search';
+    displayName: 'Metric';
+    description: '';
   };
   attributes: {
-    metaTitle: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 60;
-      }>;
-    metaDescription: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 50;
-        maxLength: 160;
-      }>;
-    metaImage: Attribute.Media;
-    metaSocial: Attribute.Component<'shared.meta-social', true>;
-    keywords: Attribute.Text;
-    metaRobots: Attribute.String;
-    structuredData: Attribute.JSON;
-    metaViewport: Attribute.String;
-    canonicalURL: Attribute.String;
+    name: Attribute.String;
+    icon: Attribute.Media<'images', true>;
+    number: Attribute.Integer;
   };
 }
 
-export interface SocialSocial extends Schema.Component {
-  collectionName: 'components_social_socials';
+export interface AboutDomain extends Schema.Component {
+  collectionName: 'components_about_domains';
   info: {
-    displayName: 'Social';
+    displayName: 'Domain';
   };
   attributes: {
-    facebook: Attribute.String;
-    instagram: Attribute.String;
-    linkedin: Attribute.String;
-    youtube: Attribute.String;
+    name: Attribute.String;
+    icon: Attribute.Media<'images'>;
+    description: Attribute.Text;
+  };
+}
+
+export interface AboutAward extends Schema.Component {
+  collectionName: 'components_about_awards';
+  info: {
+    displayName: 'Award';
+  };
+  attributes: {
+    name: Attribute.String;
+    description: Attribute.Text;
+    image: Attribute.Media<'images'>;
+  };
+}
+
+export interface AboutApproach extends Schema.Component {
+  collectionName: 'components_about_approaches';
+  info: {
+    displayName: 'Approach';
+  };
+  attributes: {
+    name: Attribute.String;
+    description: Attribute.Text;
   };
 }
 
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'about.approach': AboutApproach;
-      'about.award': AboutAward;
-      'about.domain': AboutDomain;
-      'about.metric': AboutMetric;
-      'about.presenting': AboutPresenting;
-      'about.team': AboutTeam;
-      'project.project-info': ProjectProjectInfo;
-      'project.project': ProjectProject;
-      'shared.meta-social': SharedMetaSocial;
-      'shared.seo': SharedSeo;
       'social.social': SocialSocial;
+      'shared.seo': SharedSeo;
+      'shared.meta-social': SharedMetaSocial;
+      'project.project': ProjectProject;
+      'project.project-info': ProjectProjectInfo;
+      'about.team': AboutTeam;
+      'about.presenting': AboutPresenting;
+      'about.metric': AboutMetric;
+      'about.domain': AboutDomain;
+      'about.award': AboutAward;
+      'about.approach': AboutApproach;
     }
   }
 }

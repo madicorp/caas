@@ -1,4 +1,21 @@
 export default ({ env }) => ({
+  email: {
+    config: {
+      provider: 'nodemailer',
+      providerOptions: {
+        host: env('AWS_SES_SMTP_ENDPOINT'),
+        port:  env('AWS_SES_SMTP_PORT'),
+        auth: {
+          user: env('AWS_SES_SMTP_USER'),
+          pass:env('AWS_SES_SMTP_PASSWORD'),
+        },
+      },
+      settings: {
+        defaultFrom: env('DEFAULT_FROM_EMAIL'),
+        defaultReplyTo: env('DEFAULT_REPLY_TO_EMAIL'),
+      },
+    },
+  },
   upload: {
     config: {
       provider: 'aws-s3',
