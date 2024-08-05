@@ -5,6 +5,7 @@ export default ({ env }) => ({
       providerOptions: {
         host: env('AWS_SES_SMTP_ENDPOINT'),
         port:  env('AWS_SES_SMTP_PORT'),
+        secure: true,
         auth: {
           user: env('AWS_SES_SMTP_USER'),
           pass:env('AWS_SES_SMTP_PASSWORD'),
