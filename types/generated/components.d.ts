@@ -105,6 +105,7 @@ export interface ProjectProjectInfo extends Schema.Component {
         'Immeubles d\u2019habitation'
       ]
     >;
+    description: Attribute.Text;
   };
 }
 

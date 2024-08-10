@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-08-05T01:56:08.366Z"
+    "x-generation-date": "2024-08-10T03:11:54.467Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4235,6 +4235,9 @@
               "Aménagement intérieur",
               "Immeubles d’habitation"
             ]
+          },
+          "description": {
+            "type": "string"
           }
         }
       },

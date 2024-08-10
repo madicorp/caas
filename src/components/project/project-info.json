@@ -33,6 +33,9 @@
         "Aménagement intérieur",
         "Immeubles d’habitation"
       ]
+    },
+    "description": {
+      "type": "text"
     }
   }
 }
